@@ -33,30 +33,37 @@
 
 <div class="jumbotron">
             <h1>Hello Runner!</h1>
-            
-           
             <p>Please select the distance you would like to run. </p>
+            
 
-          <form name="runs" method="POST" action='/' >
-
-            <div class="btn-group">
-              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" >------
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
+          <form name='runs' method="POST" action='/submit' >
+            <div class="form-group">
+              <!--<button class="btn btn-default dropdown-toggle form-control"  type="button" data-toggle="dropdown" >-------->
+              <!--<span class="caret"></span></button>-->
+              <!--<ul class="dropdown-menu">-->
+              
+              <!--changed dropdown button to dropdown select and options for form
+              added values to options to send data to flask app-->
+              <select class="btn btn-default dropdown-toggle form-control" name='runs'>
                 <li class="dropdown-header">Beginner</li>
-                <li><a href="#">1M</a></li>
-                <li><a href="#">5K</a></li>
-                <li><a href="#">10K</a></li>
+                <option value='1'>1M</option>
+                <option value='5' >5K</option>
+                <option value='10' >10K</option>
+                <option value='15' >15K</option>
+                <option value='5M' >5 miles</option>
+                <option value='10M' >10 miles</option>
                 <li role='separator' class="divider"></li>
-                <li class="dropdown-header">Advanced</li>
-                <li><a href="#">Half Marathon</a></li>
-                <li><a href="#">Full Marathon</a></li>
-                <li><a href="#">30K</a></li>
-                <li><a href="#">50K</a></li>
-                <li role = 'separator' class="divider"></li>
-                <li><a href="#">Trail Runs</a></li>
+                <option class="dropdown-header">Advanced</option>
+                <option value='13.1'>Half Marathon</option>
+                <option value='26.2'>Full Marathon</option>
+                <option value='20'>20K</option>
+                <option value='30'>30K</option>
+                <option value='50'>50K</option>
+                <option role = 'separator' class="divider"></option>
+                <option><a href="#">Trail Runs</a></option>
+              </select>
             </div>
-            <input type="submit" value="Submit!" />
+            <input class="btn btn-default btn-success" type="submit" value="Submit !">
                 
           </form>
           
