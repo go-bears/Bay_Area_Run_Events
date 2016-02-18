@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <title>San Francisco Races</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ 
+ 
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+
+</head>
+<body>
+<div class="container">
+        <div class="header">
+            <h3 class="text-muted">San Francisco Races</h3>
+        </div>
+ 
+
+<div class="jumbotron">
+            <h1>Hello Runner!</h1>
+            <p>Please select the distance you would like to run. </p>
+            
+
+          <form name='runs' method="POST" action='/submit' >
+            <div class="form-group">
+              <!--<button class="btn btn-default dropdown-toggle form-control"  type="button" data-toggle="dropdown" >-------->
+              <!--<span class="caret"></span></button>-->
+              <!--<ul class="dropdown-menu">-->
+              
+              <!--changed dropdown button to dropdown select and options for form
+              added values to options to send data to flask app-->
+              <select class="btn btn-default dropdown-toggle form-control" name='runs'>
+                <li class="dropdown-header">Beginner</li>
+                <option value='1'>1M</option>
+                <option value='5' >5K</option>
+                <option value='10' >10K</option>
+                <option value='15' >15K</option>
+                <option value='5M' >5 miles</option>
+                <option value='10M' >10 miles</option>
+                <li role='separator' class="divider"></li>
+                <option class="dropdown-header">Advanced</option>
+                <option value='13.1'>Half Marathon</option>
+                <option value='26.2'>Full Marathon</option>
+                <option value='20'>20K</option>
+                <option value='30'>30K</option>
+                <option value='50'>50K</option>
+                <option role = 'separator' class="divider"></option>
+                <option><a href="#">Trail Runs</a></option>
+              </select>
+            </div>
+            <input class="btn btn-default btn-success" type="submit" value="Submit !">
+                
+          </form>
+          
+          <h2> {{ msg }}</h2>
+      {% for item in races %}
+          <li>{{ item }}</li>
+      {% endfor %}
+      
+        
+<div class="container">
+ 
+    </ul>
+  </div>
+</div>
+<p> 
+
+        <footer class="footer">
+            <p>&copy; Bay Area Running Events 2016</p>
+        </footer>
+ 
+    </div>
+</body>
+
+</html>
